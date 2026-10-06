@@ -1,0 +1,20 @@
+{
+  "name": "otto-ai",
+  "version": "1.0.0",
+  "license": "proprietary",
+  "description": "Otto AI workflows for Claude, backed by the Otto remote MCP connector.",
+  "author": {
+    "name": "Otto AI",
+    "email": "hello@joinotto.com",
+    "url": "https://joinotto.com"
+  },
+  "homepage": "https://joinotto.com",
+  "keywords": [
+    "invoices",
+    "payments",
+    "contacts",
+    "bookkeeping",
+    "tax preparation",
+    "business review"
+  ]
+}

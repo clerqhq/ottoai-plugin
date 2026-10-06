@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "otto": {
+      "type": "http",
+      "url": "https://mcp.joinotto.com/mcp"
+    }
+  }
+}
