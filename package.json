@@ -1,0 +1,12 @@
+{
+  "name": "ottoai-plugin",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.mjs all",
+    "build:claude": "node scripts/build.mjs claude",
+    "build:chatgpt": "node scripts/build.mjs chatgpt",
+    "zip:chatgpt": "npm run build:chatgpt && cd chatgpt && zip -r ../otto-ai-chatgpt-plugin.zip .",
+    "validate:claude": "claude plugin validate ./claude"
+  }
+}

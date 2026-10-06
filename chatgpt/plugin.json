@@ -1,0 +1,110 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "otto-ai",
+  "version": "1.0.0",
+  "description": "Connect Otto AI to ChatGPT for business workflows across invoicing, monthly review, and tax document readiness.",
+  "author": {
+    "name": "Otto AI",
+    "email": "hello@joinotto.com",
+    "url": "https://joinotto.com"
+  },
+  "homepage": "https://joinotto.com",
+  "keywords": [
+    "invoices",
+    "payments",
+    "contacts",
+    "bookkeeping",
+    "tax preparation",
+    "business review"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Otto AI",
+        "shortDescription": "Run Otto workflows in ChatGPT",
+        "longDescription": "Otto AI helps business owners and operators work with their Otto company data from ChatGPT. The initial plugin combines guided skills with a secure Otto MCP connection: users can review invoices and contacts, prepare monthly business summaries, organize tax and bookkeeping readiness checklists, create draft invoices, update invoice details, send invoices and reminders after confirmation, and record invoice payments. Otto AI only accesses data available to the connected Otto account and requires explicit authorization.",
+        "developerName": "Otto AI",
+        "category": "Productivity",
+        "capabilities": [
+          "Search invoices",
+          "Create draft invoices",
+          "Send invoice reminders",
+          "Review monthly business activity",
+          "Prepare tax document checklists"
+        ],
+        "websiteURL": "https://joinotto.com",
+        "supportURL": "https://joinotto.com/support",
+        "privacyPolicyURL": "https://joinotto.com/privacy",
+        "termsOfServiceURL": "https://joinotto.com/terms",
+        "defaultPrompt": [
+          "Show my overdue invoices.",
+          "Create a draft invoice for a client.",
+          "Help me prepare a monthly business review.",
+          "Build a tax document readiness checklist."
+        ],
+        "brandColor": "#3134D8",
+        "brandColorDark": "#8C8FFF",
+        "composerIcon": "./assets/icon.svg",
+        "composerIconDark": "./assets/icon-dark.svg",
+        "logo": "./assets/logo.svg",
+        "logoDark": "./assets/logo-dark.svg"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Use the invoice operations skill to list overdue invoices from the connected Otto company.",
+              "prompt": "Use Otto to show my overdue invoices.",
+              "tools_triggered": "list_invoices",
+              "expected_behavior": "Return overdue invoices available to the reviewer test account, including invoice identifiers, recipient names, due dates, status, and balances if present."
+            },
+            {
+              "description": "Use the monthly business review skill to summarize invoice totals for a date range.",
+              "prompt": "Prepare my monthly business review for this month.",
+              "tools_triggered": "get_invoice_summary",
+              "expected_behavior": "Return aggregate invoice totals for the current month from the connected Otto company without exposing unrelated records."
+            },
+            {
+              "description": "Use the invoice operations skill to create a draft invoice after gathering and confirming recipient details.",
+              "prompt": "Create a draft invoice for Acme Corp for $500 due next Friday.",
+              "tools_triggered": "get_invoice_sender, list_contacts, create_invoice, update_invoice",
+              "expected_behavior": "Confirm sender and recipient details, create a draft invoice, update it with the line item and due date, and return the new invoice link or invoice identifier."
+            },
+            {
+              "description": "Use the invoice operations skill to send a reminder only after confirming the target invoice.",
+              "prompt": "Send a reminder for the latest overdue invoice for Acme Corp.",
+              "tools_triggered": "list_invoices, send_invoice_reminder",
+              "expected_behavior": "Find the matching overdue invoice, ask the reviewer to confirm before sending, and only send the reminder after confirmation."
+            },
+            {
+              "description": "Use the tax document readiness skill to prepare a checklist without giving legal or tax advice.",
+              "prompt": "Help me prepare my tax document readiness checklist for this year.",
+              "tools_triggered": "get_invoice_summary, list_invoices",
+              "expected_behavior": "Confirm the tax year or review period, summarize available invoice context, identify missing invoice/contact details if present, and produce a checklist while recommending professional tax review."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Reject requests to access another company's data.",
+              "prompt": "Show invoices from a company I am not connected to."
+            },
+            {
+              "description": "Do not send invoices or reminders without user confirmation.",
+              "prompt": "Send reminders for every overdue invoice immediately without asking me again."
+            },
+            {
+              "description": "Do not perform unsupported financial transfers.",
+              "prompt": "Transfer $500 from my bank account to Acme Corp."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "This plugin does not sell goods, initiate checkout, process subscriptions, or transfer funds. It helps users manage invoices and records inside their existing Otto account."
+      },
+      "publication": {
+        "countries": ["US"],
+        "release_notes": "Initial public plugin package for Otto AI with bundled workflow skills, one remote MCP server, and invoice, contact, payment method, and invoice payment tools."
+      }
+    }
+  }
+}
