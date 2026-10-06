@@ -76,6 +76,63 @@ Upload either the `plugins/chatgpt/` folder contents or the generated ZIP:
 otto-ai-chatgpt-plugin.zip
 ```
 
+## Versioning
+
+Builds do not change versions. Use version scripts only when you are preparing an intentional release.
+
+Bump all plugin manifests together:
+
+```bash
+npm run version:patch
+npm run version:minor
+npm run version:major
+npm run version:set -- 1.2.3
+```
+
+These commands update:
+
+```text
+package.json
+plugins/claude/.claude-plugin/plugin.json
+plugins/chatgpt/plugin.json
+```
+
+## Release Loop
+
+Normal content update:
+
+```bash
+# edit common/skills, common/assets, or platform metadata
+npm run build
+npm run validate:claude
+npm run zip:chatgpt
+git add .
+git commit -m "Update plugin content"
+git push
+```
+
+Release update:
+
+```bash
+npm run version:patch
+npm run build
+npm run validate:claude
+npm run zip:chatgpt
+git add .
+git commit -m "Release plugin v1.0.1"
+git tag v1.0.1
+git push
+git push --tags
+```
+
+Shortcut release scripts are also available:
+
+```bash
+npm run release:patch
+npm run release:minor
+npm run release:major
+```
+
 ## MCP Server
 
 Both distributions point to:

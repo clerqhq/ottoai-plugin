@@ -102,7 +102,9 @@
         "commerce_description": "This plugin does not sell goods, initiate checkout, process subscriptions, or transfer funds. It helps users manage invoices and records inside their existing Otto account."
       },
       "publication": {
-        "countries": ["US"],
+        "countries": [
+          "US"
+        ],
         "release_notes": "Initial public plugin package for Otto AI with bundled workflow skills, one remote MCP server, and invoice, contact, payment method, and invoice payment tools."
       }
     }

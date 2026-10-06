@@ -7,6 +7,13 @@
     "build:claude": "node scripts/build.mjs claude",
     "build:chatgpt": "node scripts/build.mjs chatgpt",
     "zip:chatgpt": "npm run build:chatgpt && cd plugins/chatgpt && zip -r ../../otto-ai-chatgpt-plugin.zip .",
-    "validate:claude": "claude plugin validate ./plugins/claude"
+    "validate:claude": "claude plugin validate ./plugins/claude",
+    "version:patch": "node scripts/version.mjs patch",
+    "version:minor": "node scripts/version.mjs minor",
+    "version:major": "node scripts/version.mjs major",
+    "version:set": "node scripts/version.mjs",
+    "release:patch": "npm run version:patch && npm run build && npm run zip:chatgpt && npm run validate:claude",
+    "release:minor": "npm run version:minor && npm run build && npm run zip:chatgpt && npm run validate:claude",
+    "release:major": "npm run version:major && npm run build && npm run zip:chatgpt && npm run validate:claude"
   }
 }
