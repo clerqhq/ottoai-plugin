@@ -9,7 +9,12 @@
     "url": "https://joinotto.com"
   },
   "homepage": "https://joinotto.com",
+  "repository": "https://github.com/clerqhq/ottoai-plugin",
+  "documentationUrl": "https://github.com/clerqhq/ottoai-plugin/tree/main/plugins/claude#readme",
+  "supportUrl": "mailto:hello@joinotto.com",
   "privacyPolicyUrl": "https://joinotto.com/privacy",
+  "termsOfServiceUrl": "https://joinotto.com/terms",
+  "icon": "./assets/icon.svg",
   "keywords": [
     "invoices",
     "payments",
