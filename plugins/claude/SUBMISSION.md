@@ -4,9 +4,9 @@ Submit this folder as the Claude plugin bundle.
 
 ## Plugin Bundle
 
-- Repository: Otto backend repository
-- Source path: `packages/ai-plugin/src/distributions/claude`
-- Prepared plugin path: `packages/ai-plugin/dist/claude`
+- Repository: `clerqhq/ottoai-plugin`
+- Source path: `plugins/claude`
+- Prepared plugin path: `plugins/claude`
 - Bundle contents:
   - `plugin.json`
   - `README.md`
@@ -19,8 +19,8 @@ Submit this folder as the Claude plugin bundle.
 Validate before submission:
 
 ```bash
-pnpm --filter @ottoai/ai-plugin prepare:claude
-claude plugin validate ./packages/ai-plugin/dist/claude
+npm run build:claude
+claude plugin validate ./plugins/claude
 ```
 
 ## MCP Connector
