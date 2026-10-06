@@ -13,19 +13,19 @@ function cp(from, to) {
 }
 
 function buildClaude() {
-  rm("claude/assets");
-  rm("claude/skills");
-  cp("common/assets", "claude/assets");
-  cp("common/skills", "claude/skills");
+  rm("plugins/claude/assets");
+  rm("plugins/claude/skills");
+  cp("common/assets", "plugins/claude/assets");
+  cp("common/skills", "plugins/claude/skills");
 }
 
 function buildChatGPT() {
-  rm("chatgpt/assets");
-  rm("chatgpt/skills");
-  rm("chatgpt/extensions");
-  cp("common/assets", "chatgpt/assets");
-  cp("common/skills", "chatgpt/skills");
-  cp("common/extensions", "chatgpt/extensions");
+  rm("plugins/chatgpt/assets");
+  rm("plugins/chatgpt/skills");
+  rm("plugins/chatgpt/extensions");
+  cp("common/assets", "plugins/chatgpt/assets");
+  cp("common/skills", "plugins/chatgpt/skills");
+  cp("common/extensions", "plugins/chatgpt/extensions");
 }
 
 if (target === "claude") {

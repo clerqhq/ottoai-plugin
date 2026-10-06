@@ -6,7 +6,7 @@
     "build": "node scripts/build.mjs all",
     "build:claude": "node scripts/build.mjs claude",
     "build:chatgpt": "node scripts/build.mjs chatgpt",
-    "zip:chatgpt": "npm run build:chatgpt && cd chatgpt && zip -r ../otto-ai-chatgpt-plugin.zip .",
-    "validate:claude": "claude plugin validate ./claude"
+    "zip:chatgpt": "npm run build:chatgpt && cd plugins/chatgpt && zip -r ../../otto-ai-chatgpt-plugin.zip .",
+    "validate:claude": "claude plugin validate ./plugins/claude"
   }
 }
