@@ -32,7 +32,7 @@ The Otto MCP connector should also be submitted/tracked separately.
 - Auth: OAuth
 - Website: `https://joinotto.com`
 - Support: `hello@joinotto.com`
-- Privacy policy: `https://joinotto.com/privacy`
+- Privacy policy: `https://joinotto.com/privacy-policy`
 - Terms: `https://joinotto.com/terms`
 
 If the connector has already been submitted, include that review/submission ID when submitting or following up on this plugin bundle.

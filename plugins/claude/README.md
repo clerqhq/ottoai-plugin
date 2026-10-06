@@ -13,7 +13,7 @@ The plugin bundle provides Claude-facing workflow skills. The MCP connector prov
 - MCP server: `https://mcp.joinotto.com/mcp`
 - Website: `https://joinotto.com`
 - Support: `hello@joinotto.com`
-- Privacy policy: `https://joinotto.com/privacy`
+- Privacy policy: `https://joinotto.com/privacy-policy`
 - Terms: `https://joinotto.com/terms`
 
 ## Setup
