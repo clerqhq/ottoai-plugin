@@ -41,8 +41,8 @@
           "Create a draft invoice for a client.",
           "Help me prepare a monthly business review."
         ],
-        "brandColor": "#3134D8",
-        "brandColorDark": "#8C8FFF",
+        "brandColor": "#233ed9",
+        "brandColorDark": "#233ed9",
         "composerIcon": "./assets/icon.svg",
         "composerIconDark": "./assets/icon-dark.svg",
         "logo": "./assets/logo.svg",
